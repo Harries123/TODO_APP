@@ -5,9 +5,14 @@
     <title>Dashboard - To-Do App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
 </head>
 
 <body class="bg-light">
@@ -21,12 +26,34 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active p-3" aria-current="page" href="#" >To-do List</a>
+                        <a id="todoListLink" class="nav-link active p-3" aria-current="page" href="#" >To-do List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <button class="btn btn-outline-danger">Log Out</button>
-                        </a>
+                        
+    <a id="logout" class="nav-link" href="#">
+        <button class="btn btn-outline-danger" onclick="window.location.href='index.html'">Log Out</button>
+    </a>
+    
+
+          <!-- Bootstrap Modal -->
+<div class="modal fade" id="taskCompletedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Congratulations!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Congrats. 5 Tasks have been Successfully Completed.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
                     </li>
                 </ul>
             </div>
@@ -36,7 +63,7 @@
     
 
     <!-- Main To-do List Section -->
-    <div class="container mt-5">
+    <div id="todoList" class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <!-- Card for To-do List -->
@@ -46,10 +73,12 @@
                     </div>
                     <div class="card-body">
 
+                    
+
                         <!-- To-do Item -->
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for task">
+                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for task" onclick="">
                             </div>
                             <input type="text" class="form-control" placeholder="Enter a task" aria-label="Task input">
                         </div>
@@ -123,8 +152,27 @@
             </div>
         </div>
     </div>
+   
 
-    <script src="script.js"></script>
+    <!-- Modal structure -->
+<div class="modal fade" id="taskCompletedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Congratulations!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Congrats. 5 Tasks have been Successfully Completed.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="homepage_script.js"></script>
 </body>
 
 </html>
